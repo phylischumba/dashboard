@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Patients from './pages/Patients';
+import PatientsData from './pages/Patients';
 import Settings from './pages/Settings';
 import Shop from './pages/Shop';
 import Dashboard from './pages/Dashboard';
@@ -15,7 +15,7 @@ function Routes() {
           <Layout {...props}>
             <Switch>
               <Route path="/" exact component={Dashboard} />
-              <Route path="/patients" component={Patients} />
+              <Route path="/patients" component={PatientsData} />
               <Route path="/settings" component={Settings} />
               <Route path="/shop" component={Shop} />
               <Route component={NotFound} />

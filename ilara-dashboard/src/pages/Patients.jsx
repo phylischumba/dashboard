@@ -1,12 +1,11 @@
 import React from 'react';
-// import MetaData from '../components/MetaData';
+import MetaData from '../components/MetaData';
 import PatientCard from '../components/PatientCard';
 import { data } from '../data';
 
-function Page1() {
-  console.log('fdsa');
+function PatientsData() {
   return (
-    <div className="app" style={{ flexDirection: 'column' }}>
+    <div className="app">
       <div style={{ width: '30%', backgroundColor: 'white' }}>
         <h2>Patients</h2>{' '}
         {data.map((item) => (
@@ -20,10 +19,10 @@ function Page1() {
         ))}
       </div>
       <div style={{ backgroundColor: 'white', width: '62%', padding: '20px' }}>
-        {/* <MetaData /> */}
+        <MetaData />
       </div>
     </div>
   );
 }
 
-export default Page1;
+export default PatientsData;
