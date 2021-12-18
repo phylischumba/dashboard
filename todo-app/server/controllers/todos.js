@@ -15,7 +15,7 @@ module.exports = {
   //   list all todos
   list(req, res) {
     return Todo.findAll({
-      order: [["createdAt", "ASC"]],
+      order: [["createdAt", "DESC"]],
     })
       .then((todos) => res.status(200).send(todos))
       .catch((error) => res.status(400).send(error));
@@ -72,22 +72,7 @@ module.exports = {
       })
       .catch((error) => res.status(400).send(error));
   },
-
-  async limit(req) {
-    try {
-      await req.todos
-        .populate({
-          path: "todos",
-          options: {
-            limit: parseInt(10),
-          },
-        })
-        .execPopulate();
-      res.status(200).send(req.todos);
-    } catch (e) {
-      res.status(400).send(e.message);
-    }
-  },
+  // sort in ascending or decending order
   async sort(res, req) {
     const match = {};
     const sort = {};
@@ -104,40 +89,25 @@ module.exports = {
             sort,
           },
         })
-        .execPopulate();
+        .exec();
       res.status(200).send(req.todos);
     } catch (e) {
       res.status(400).send(e.message);
     }
   },
-  async skip(req, res) {
-    try {
-      await req.todos
-        .populate({
-          path: "todos",
-          match,
-          options: {
-            limit: parseInt(10),
-            skip: parseInt(10),
-          },
-        })
-        .execPopulate();
-      res.status(200).send(req.todos);
-    } catch (e) {
-      res.status(400).send(e.message);
-    }
+  // limit 10 and offset 10
+  skip(req, res) {
+    findAll({ limit: 10, offset: 10 })
+      .then((todos) => res.status(200).send(todos))
+      .catch((error) => res.status(400).send(error));
   },
+  // limit 10
 
-  getLatest() {
-    Todo.find(
-      { published: true },
-      null,
-      { sort: { date: "asc" }, limit: 10 },
-      function (error, todos) {
-        if (error) return `${error} while fetching todos`;
-
-        return todos; // posts with sorted length of 20
-      }
-    ).catch((e) => res.status(500).json({ message: "Error Occured" }));
+  limit(req, res) {
+    return Todo.findAll({
+      limit: 10,
+    })
+      .then((todos) => res.status(200).send(todos))
+      .catch((error) => res.status(400).send(error));
   },
 };

@@ -12,4 +12,7 @@ module.exports = (app) => {
   app.get("/todos/:todoId", todosController.retrieve);
   app.put("/todos/:todoId", todosController.update);
   app.delete("/todos/:todoId", todosController.destroy);
+  app.get("/todos?limit=10", todosController.limit);
+  app.get("/todos?limit=10&skip=10", todosController.skip);
+  app.get("/todos?sort=asc|desc", todosController.sort);
 };
