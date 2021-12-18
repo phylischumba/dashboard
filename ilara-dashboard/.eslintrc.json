@@ -1,0 +1,47 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "jest": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:prettier/recommended"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+        "react/react-in-jsx-scope": "off",
+        "react/jsx-filename-extension": "off",
+        "global-require": "off",
+        "object-curly-newline": "off",
+        "react/forbid-prop-types": "off",
+        "no-confusing-arrow": "off",
+        "implicit-arrow-linebreak": "off",
+        "react/jsx-curly-newline": "off",
+        "no-param-reassign": "off",
+        "react/jsx-props-no-spreading": "off",
+        "function-paren-newline": "off",
+        "no-unused-expressions": "off",
+        "react/jsx-wrap-multilines": "off",
+        "operator-linebreak": "off",
+        "indent": "off",
+        "linebreak-style": "off",
+        "import/prefer-default-export": "off",
+        "no-use-before-define": "off",
+        "import/no-unresolved": "off",
+        "import/extensions": "off",
+        "react/jsx-indent": "off",
+        "react/destructuring-assignment": "off",
+        "no-nested-ternary": 0
+    }
+}
