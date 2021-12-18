@@ -1,0 +1,55 @@
+.form {
+  width: 30vw;
+  margin-bottom: 20px;
+}
+#search {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #e3e6e8;
+  padding-left: 40px;
+}
+.logo {
+  width: 40px;
+  height: 40px;
+}
+
+.lastNav {
+  display: flex;
+  width: 20vw;
+  justify-content: space-between;
+  align-items: center;
+}
+.profile {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  font-size: 25px;
+  color: navy;
+}
+.avatar {
+  font-size: 35px;
+}
+
+.setting {
+  align-self: center;
+}
+
+.logs {
+  font-weight: 800;
+  color: #03045e;
+  font-size: 13px;
+}
+
+.time {
+  font-size: 11px;
+  color: gray;
+}
+.search-icon {
+  position: relative;
+  top: 33px;
+  left: 10px;
+  font-size: 22px;
+}
