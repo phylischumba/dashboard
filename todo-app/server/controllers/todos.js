@@ -12,10 +12,19 @@ module.exports = {
       .then((todo) => res.status(201).send(todo))
       .catch((error) => res.status(400).send(error));
   },
-  //   list all todos
+  //  list all todos with  and without query params
   list(req, res) {
+    const sortEnum = ["ASC", "DESC"];
+    let isSorting = false;
+    let sortVar = req?.query?.sort?.toUpperCase() || "";
+    if (sortEnum.includes(sortVar)) {
+      isSorting = true;
+    }
     return Todo.findAll({
-      order: [["createdAt", "DESC"]],
+      ...(req.query.limit && { limit: req.query.limit }),
+      ...(req.query.skip && { offset: req.query.skip }),
+
+      order: [...(isSorting ? [["id", sortVar]] : [["createdAt", "DESC"]])],
     })
       .then((todos) => res.status(200).send(todos))
       .catch((error) => res.status(400).send(error));
@@ -70,44 +79,6 @@ module.exports = {
           )
           .catch((error) => res.status(400).send(error));
       })
-      .catch((error) => res.status(400).send(error));
-  },
-  // sort in ascending or decending order
-  async sort(res, req) {
-    const match = {};
-    const sort = {};
-    if (req.query.sortBy) {
-      const str = req.query.sortBy.split(":");
-      sort[str[0]] = str[1] === "desc" ? -1 : 1;
-    }
-    try {
-      await req.todos
-        .populate({
-          path: "todos",
-          match,
-          options: {
-            sort,
-          },
-        })
-        .exec();
-      res.status(200).send(req.todos);
-    } catch (e) {
-      res.status(400).send(e.message);
-    }
-  },
-  // limit 10 and offset 10
-  skip(req, res) {
-    findAll({ limit: 10, offset: 10 })
-      .then((todos) => res.status(200).send(todos))
-      .catch((error) => res.status(400).send(error));
-  },
-  // limit 10
-
-  limit(req, res) {
-    return Todo.findAll({
-      limit: 10,
-    })
-      .then((todos) => res.status(200).send(todos))
       .catch((error) => res.status(400).send(error));
   },
 };

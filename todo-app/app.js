@@ -15,4 +15,8 @@ app.get("*", (req, res) =>
   })
 );
 
+app.listen(8000, () => {
+  console.log("running at port 8000");
+});
+
 module.exports = app;
