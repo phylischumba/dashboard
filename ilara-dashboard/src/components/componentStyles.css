@@ -35,6 +35,8 @@
 
 .setting {
   align-self: center;
+  font-size: 25px;
+  color: gray;
 }
 
 .logs {

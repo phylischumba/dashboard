@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
 import { MdSettings } from 'react-icons/md';
 import styled from 'styled-components';
-import { VscHeart } from 'react-icons/vsc';
+import { RiHeart3Fill } from 'react-icons/ri';
 import { MdAutoGraph, MdOutlineWaterDrop } from 'react-icons/md';
 
-const PatientCard = ({ avatar, assigned, name, cycle }) => {
+const PatientCard = ({ avatar, assigned, name, cycle, pressure }) => {
   return (
     <Patient>
       <PatientData>
@@ -16,15 +16,15 @@ const PatientCard = ({ avatar, assigned, name, cycle }) => {
         </PatientInfo>
       </PatientData>
       <div>
-        <div>
+        <div className="vital">
           <h6>Vital Status</h6>
           <div style={{ display: 'flex', justifyContent: 'space-between', width: '150px' }}>
-            <div>
-              <VscHeart />
+            <StyledIcons>
+              <RiHeart3Fill color={pressure.toUpperCase() === 'IN RANGE' ? 'limegreen' : 'red'} />
               <MdOutlineWaterDrop />
-              <VscHeart />
+              <RiHeart3Fill />
               <MdAutoGraph />
-            </div>
+            </StyledIcons>
 
             <MdSettings className="setting" />
           </div>
@@ -44,6 +44,8 @@ const Patient = styled.div`
   alight-atiems: center;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   margin: 10px 0;
+  padding: 10px 0;
+  align-self: center;
 `;
 const Img = styled.img`
   height: 50px;
@@ -60,10 +62,14 @@ const PatientInfo = styled.div`
   display: flex;
   flex-direction: column;
   p {
-    font-size: 14px;
-    margin: 10px;
+    font-size: 12px;
+    margin: 2px;
   }
   span {
     font-weight: bold;
+    color: #03045e;
   }
+`;
+const StyledIcons = styled.div`
+  font-size: 20px;
 `;

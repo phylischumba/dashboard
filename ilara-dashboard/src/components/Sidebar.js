@@ -1,9 +1,9 @@
-/* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-key */
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import SidebarItems from './SidebarItems';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 function Sidebar(props, { defaultActive }) {
   const location = props.history.location;
@@ -33,7 +33,7 @@ function Sidebar(props, { defaultActive }) {
   return (
     <>
       <SidebarParent>
-        <div style={{ position: 'fixed', zIndex: 999 }}>
+        <div style={{ position: 'fixed', zIndex: 999, top: '17vh' }}>
           {SidebarItems.map((item, index) => {
             return (
               <Link to={item.route}>
@@ -52,6 +52,11 @@ function Sidebar(props, { defaultActive }) {
 }
 
 export default Sidebar;
+
+Sidebar.propTypes = {
+  history: PropTypes.string,
+  location: PropTypes.string
+};
 
 const SidebarParent = styled.div`
   a {

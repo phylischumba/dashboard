@@ -73,7 +73,7 @@ const MetaData = () => {
         <Vitals
           name="Weight"
           assigned="7"
-          value="130/80"
+          value="67"
           status="Waiting"
           icon={<FaHeart style={{ color: 'gray' }} />}
           color="gray"
@@ -81,7 +81,7 @@ const MetaData = () => {
         <Vitals
           name="Blood Glucose"
           assigned="7"
-          value="130/80"
+          value="90"
           status="Waiting"
           icon={<MdWaterDrop style={{ color: 'green' }} />}
           color="green"

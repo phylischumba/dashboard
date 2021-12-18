@@ -17,3 +17,12 @@ code {
   justify-content: space-around;
   background-color: #e3e6e8;
 }
+
+.header-icons {
+  margin: 0 10px;
+  font-size: 13px;
+}
+
+.vital h6 {
+  margin: 0 0 15px 0;
+}
