@@ -4,7 +4,7 @@ body {
     'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #e3e6e8;
+  background-color: #f5f6f9;
 }
 
 code {
@@ -15,7 +15,7 @@ code {
   top: 13vh;
   display: flex;
   justify-content: space-around;
-  background-color: #e3e6e8;
+  background-color: #f5f6f9;
 }
 
 .header-icons {
@@ -25,4 +25,10 @@ code {
 
 .vital h6 {
   margin: 0 0 15px 0;
+}
+.side-image {
+  width: 250px;
+  height: 450px;
+  position: absolute;
+  bottom: 100px;
 }

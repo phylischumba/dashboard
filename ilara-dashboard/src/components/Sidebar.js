@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import SidebarItems from './SidebarItems';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import docImage from '../assets/doc.png';
 
 function Sidebar(props, { defaultActive }) {
   const location = props.history.location;
@@ -44,6 +45,7 @@ function Sidebar(props, { defaultActive }) {
               </Link>
             );
           })}
+          <img src={docImage} alt="doc image" className="side-image" />
         </div>
         <div className="behind-the-scenes" />
       </SidebarParent>

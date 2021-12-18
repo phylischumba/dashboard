@@ -4,7 +4,7 @@ import Logo from '../assets/logo.png';
 import SearchBar from './Search';
 import styled from 'styled-components';
 import { VscBellDot } from 'react-icons/vsc';
-import { MdChatBubble, MdPerson, MdKeyboardArrowDown } from 'react-icons/md';
+import { MdChatBubble, MdKeyboardArrowDown } from 'react-icons/md';
 import './componentStyles.css';
 
 function Nav() {
@@ -33,8 +33,11 @@ function Nav() {
           <MdChatBubble className="icon" />
         </NavItem>
         <NavItem className="profile">
-          <MdPerson className="avatar" />
-          <p>Dr. Grayson</p>
+          <img
+            src="https://images.pexels.com/photos/8348965/pexels-photo-8348965.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+            className="avatar"
+          />
+          <h5>Dr. Grayson</h5>
           <MdKeyboardArrowDown />
         </NavItem>
       </div>
@@ -46,6 +49,12 @@ const NavItem = styled.div`
   padding: 0 10px;
   align-self: center;
   z-index: 999;
+  img {
+    height: 43px;
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
 `;
 const NavBar = styled.div`
   display: flex;

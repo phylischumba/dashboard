@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { RiHeart3Fill } from 'react-icons/ri';
 import { MdAutoGraph, MdOutlineWaterDrop } from 'react-icons/md';
 
-const PatientCard = ({ avatar, assigned, name, cycle, pressure }) => {
+const ClickedPatientCard = ({ avatar, assigned, name, cycle, pressure }) => {
   return (
     <Patient>
       <PatientData>
@@ -34,7 +34,7 @@ const PatientCard = ({ avatar, assigned, name, cycle, pressure }) => {
   );
 };
 
-export default PatientCard;
+export default ClickedPatientCard;
 
 const Patient = styled.div`
   width: 100%;
@@ -42,10 +42,10 @@ const Patient = styled.div`
   display: flex;
   justify-content: space-evenly;
   alight-atiems: center;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  margin: 20px 0;
-  padding: 10px 0;
+  margin: 10px 0;
   align-self: center;
+  box-shadow: rgb(0 0 0 / 25%) 0px 14px 28px, rgb(0 0 0 / 22%) 0px 10px 10px;
+  padding: 20px 0;
 `;
 const Img = styled.img`
   height: 50px;

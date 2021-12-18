@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import { RiCheckboxBlankCircleFill } from 'react-icons/ri';
 import { IoFilterSharp } from 'react-icons/io5';
 import { MdOutlineShare } from 'react-icons/md';
+import ClickedPatientCard from '../components/ClickedPatient';
 
 function PatientsData() {
   return (
@@ -31,6 +32,13 @@ function PatientsData() {
           </div>
         </Header>
         <div style={{ backgroundColor: 'white' }}>
+          <ClickedPatientCard
+            avatar="https://images.pexels.com/photos/8348965/pexels-photo-8348965.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+            assigned="Nov 29, 19"
+            name="Erica Rodriges"
+            cycle="31st"
+            pressure="in range"
+          />
           {data.map((item) => (
             // eslint-disable-next-line react/jsx-key
             <PatientCard
