@@ -1,8 +1,9 @@
 ## Patient dashboard
 
 This a UI of a dashboard displaying patients list and their information
-
-
+![](./src/assets/patients.png)
+## Live link
+[Live link](https://ilara-assignments-ljix3ykxx-phylischumba.vercel.app/patients)
 ## Built With
 
 - React
