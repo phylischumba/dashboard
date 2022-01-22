@@ -16,6 +16,7 @@ code {
   display: flex;
   justify-content: space-around;
   background-color: #f5f6f9;
+  overflow-x: hidden;
 }
 
 .header-icons {
@@ -27,8 +28,7 @@ code {
   margin: 0 0 15px 0;
 }
 .side-image {
-  width: 250px;
+  width: 150px;
   height: 450px;
   position: absolute;
-  bottom: 100px;
 }
