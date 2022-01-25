@@ -33,6 +33,15 @@ const data = [
   }
 ];
 
+const StyledHeader = styled.div`
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 40px 30px 0;
+  padding-bottom: 20px;
+  border-bottom: 0.5px dotted #e3e6e8;
+`;
+
 const LineGraph = () => {
   return (
     <div style={{ borderBottom: '0.5px dotted #e3e6e8' }}>
@@ -62,12 +71,3 @@ const LineGraph = () => {
 };
 
 export default LineGraph;
-
-const StyledHeader = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  margin: 30px 40px 30px 0;
-  padding-bottom: 20px;
-  border-bottom: 0.5px dotted #e3e6e8;
-`;

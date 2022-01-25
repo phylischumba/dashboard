@@ -18,6 +18,11 @@ code {
   background-color: #f5f6f9;
   overflow-x: hidden;
 }
+@media (max-width: 1010px) {
+  .app {
+    flex-direction: column;
+  }
+}
 
 .header-icons {
   margin: 0 10px;

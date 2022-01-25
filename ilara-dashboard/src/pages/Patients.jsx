@@ -7,11 +7,38 @@ import { RiCheckboxBlankCircleFill } from 'react-icons/ri';
 import { IoFilterSharp } from 'react-icons/io5';
 import { MdOutlineShare } from 'react-icons/md';
 import ClickedPatientCard from '../components/ClickedPatient';
+const Header = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  button {
+    background-color: white;
+    border: 1px solid gray;
+    padding: 6px 10px;
+    margin-right: 5px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+`;
+const FirstDiv = styled.div`
+  width: 35%;
+  @media (max-width: 1010px) {
+    width: 90%;
+  }
+`;
+const MetaDataDiv = styled.div`
+  background-color: white;
+  width: 58%;
+  padding: 20px;
+  @media (max-width: 1008px) {
+    width: 90%;
+  }
+`;
 
-function PatientsData() {
+const PatientsData = () => {
   return (
     <div className="app">
-      <div style={{ width: '35%' }}>
+      <FirstDiv>
         <Header>
           <h3>Patients</h3>
           <div>
@@ -50,26 +77,13 @@ function PatientsData() {
             />
           ))}
         </div>
-      </div>
+      </FirstDiv>
 
-      <div style={{ backgroundColor: 'white', width: '58%', padding: '20px' }}>
+      <MetaDataDiv>
         <MetaData />
-      </div>
+      </MetaDataDiv>
     </div>
   );
-}
+};
 
 export default PatientsData;
-const Header = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  button {
-    background-color: white;
-    border: 1px solid gray;
-    padding: 6px 10px;
-    margin-right: 5px;
-    font-size: 12px;
-    cursor: pointer;
-  }
-`;

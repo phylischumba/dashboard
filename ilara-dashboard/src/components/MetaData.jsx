@@ -13,6 +13,56 @@ import './componentStyles.css';
 import Line from './Line';
 import { FaHeart } from 'react-icons/fa';
 
+const Img = styled.img`
+  height: 50px;
+  width: 47px;
+  border-radius: 50%;
+  margin-right: 10px;
+`;
+const PatientInfo = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  p {
+    margin: 2px;
+  }
+`;
+const VitalDiv = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 10px;
+  border-bottom: 0.5px solid #e3e6e8;
+`;
+
+const FirstData = styled.div`
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 0.5px dotted #e3e6e8;
+`;
+const StyledIconDiv = styled.div`
+  border: 1px solid navy;
+  border-radius: 50%;
+  height: 35px;
+  width: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+const ActionIcons = styled.div`
+  display: flex;
+  justify-content: space-around;
+  width: 300px;
+`;
+const StyledButton = styled.button`
+  background-color: #ffffff;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 const MetaData = () => {
   return (
     <div>
@@ -93,53 +143,3 @@ const MetaData = () => {
   );
 };
 export default MetaData;
-
-const Img = styled.img`
-  height: 50px;
-  width: 47px;
-  border-radius: 50%;
-  margin-right: 10px;
-`;
-const PatientInfo = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  p {
-    margin: 2px;
-  }
-`;
-const VitalDiv = styled.div`
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  padding-bottom: 10px;
-  border-bottom: 0.5px solid #e3e6e8;
-`;
-
-const FirstData = styled.div`
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 0.5px dotted #e3e6e8;
-`;
-const StyledIconDiv = styled.div`
-  border: 1px solid navy;
-  border-radius: 50%;
-  height: 35px;
-  width: 35px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-const ActionIcons = styled.div`
-  display: flex;
-  justify-content: space-around;
-  width: 300px;
-`;
-const StyledButton = styled.button`
-  background-color: #ffffff;
-  border-radius: 4px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;

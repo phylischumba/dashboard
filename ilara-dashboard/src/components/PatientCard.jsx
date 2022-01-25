@@ -4,38 +4,6 @@ import styled from 'styled-components';
 import { RiHeart3Fill } from 'react-icons/ri';
 import { MdAutoGraph, MdOutlineWaterDrop } from 'react-icons/md';
 
-const PatientCard = ({ avatar, assigned, name, cycle, pressure }) => {
-  return (
-    <Patient>
-      <PatientData>
-        <Img src={avatar} alt={name} />
-        <PatientInfo>
-          <p>Assigned on {assigned}</p>
-          <span>{name}</span>
-          <p>Cycle starts {cycle}</p>
-        </PatientInfo>
-      </PatientData>
-      <div>
-        <div className="vital">
-          <h6>Vital Status</h6>
-          <div style={{ display: 'flex', justifyContent: 'space-between', width: '150px' }}>
-            <StyledIcons>
-              <RiHeart3Fill color={pressure.toUpperCase() === 'IN RANGE' ? 'limegreen' : 'red'} />
-              <MdOutlineWaterDrop />
-              <RiHeart3Fill />
-              <MdAutoGraph />
-            </StyledIcons>
-
-            <MdSettings className="setting" />
-          </div>
-        </div>
-      </div>
-    </Patient>
-  );
-};
-
-export default PatientCard;
-
 const Patient = styled.div`
   width: 100%;
   backgound-color: #f6f6f6;
@@ -73,3 +41,35 @@ const PatientInfo = styled.div`
 const StyledIcons = styled.div`
   font-size: 20px;
 `;
+
+const PatientCard = ({ avatar, assigned, name, cycle, pressure }) => {
+  return (
+    <Patient>
+      <PatientData>
+        <Img src={avatar} alt={name} />
+        <PatientInfo>
+          <p>Assigned on {assigned}</p>
+          <span>{name}</span>
+          <p>Cycle starts {cycle}</p>
+        </PatientInfo>
+      </PatientData>
+      <div>
+        <div className="vital">
+          <h6>Vital Status</h6>
+          <div style={{ display: 'flex', justifyContent: 'space-between', width: '150px' }}>
+            <StyledIcons>
+              <RiHeart3Fill color={pressure.toUpperCase() === 'IN RANGE' ? 'limegreen' : 'red'} />
+              <MdOutlineWaterDrop />
+              <RiHeart3Fill />
+              <MdAutoGraph />
+            </StyledIcons>
+
+            <MdSettings className="setting" />
+          </div>
+        </div>
+      </div>
+    </Patient>
+  );
+};
+
+export default PatientCard;

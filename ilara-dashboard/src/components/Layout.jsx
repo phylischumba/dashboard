@@ -3,7 +3,7 @@ import React from 'react';
 import Sidebar from './Sidebar';
 import Nav from './Nav';
 
-function Layout(props) {
+const Layout = (props) => {
   return (
     <div>
       <div style={{ display: 'flex' }}>
@@ -16,6 +16,6 @@ function Layout(props) {
       </div>
     </div>
   );
-}
+};
 
 export default Layout;

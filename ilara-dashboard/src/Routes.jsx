@@ -7,7 +7,7 @@ import Dashboard from './pages/Dashboard';
 import NotFound from './pages/NotFound';
 import Layout from './components/Layout';
 
-function Routes() {
+const Routes = () => {
   return (
     <BrowserRouter>
       <Route
@@ -25,6 +25,6 @@ function Routes() {
       />
     </BrowserRouter>
   );
-}
+};
 
 export default Routes;
